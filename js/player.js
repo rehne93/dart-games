@@ -13,7 +13,7 @@ class Player {
 
         if (!isString(name)) {
             this.name = "";
-        }else{
+        } else {
             this.name = name;
         }
 
@@ -28,6 +28,15 @@ class Player {
     getScoreLeft() {
         return this.scoreLeft;
     }
+
+    addScore(score) {
+        this.scoreLeft += score;
+    }
+
+    resetScore(){
+        this.scoreLeft = 0;
+    }
+
     // TODO Make sure that it REALLY is an instance of the game class
     /* Instance of the Game class */
     getGame() {

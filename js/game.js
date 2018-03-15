@@ -16,9 +16,10 @@ class Game {
         } else {
             this.targetScore = targetScore;
         }
+        this.listOfPlayers = [numberOfPlayers];
+
         // Initialize Players
         for (var i = 0; i < numberOfPlayers; i++) {
-            this.listOfPlayers = [numberOfPlayers]
             this.listOfPlayers[i] = new Player(this);
         }
         console.log("Created " + numberOfPlayers + " new players.");
@@ -35,5 +36,8 @@ class Game {
     getTargetScore() {
         return this.targetScore;
     }
+
+
+
 
 }
