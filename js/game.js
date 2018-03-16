@@ -33,6 +33,7 @@ class Game {
         return this.listOfPlayers;
     }
 
+    /** How many points will be needed to win, default 301 */
     getTargetScore() {
         return this.targetScore;
     }

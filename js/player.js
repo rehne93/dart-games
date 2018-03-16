@@ -6,13 +6,13 @@ class Player {
 
     constructor(game, name) {
         if (game === undefined) {
-            throw new Error("Player recieved illegal game argument");
+            throw new Error("Player received illegal game argument");
         } else if (game instanceof Game === false) {
-            throw new Error("Player recieved illegal game argument");
+            throw new Error("Player received illegal game argument");
         }
         this.game = game;
         this.name = !isString(name) ? "" : name;
-        this.scoreLeft = 0;
+        this.scoreShot = 0;
 
     }
 
@@ -20,16 +20,17 @@ class Player {
         return this.name;
     }
 
-    getScoreLeft() {
-        return this.scoreLeft;
+    /** How many points the player already shot, between 0 and 301*/
+    getScoreShot() {
+        return this.scoreShot;
     }
-
+    /** Adds one shot to the score the player already has */
     addScore(score) {
-        this.scoreLeft += score;
+        this.scoreShot += score;
     }
-
+    /** Resets the score shot to zero */
     resetScore(){
-        this.scoreLeft = 0;
+        this.scoreShot = 0;
     }
 
     /* Instance of the Game class */

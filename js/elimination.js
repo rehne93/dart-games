@@ -45,14 +45,14 @@ function shot(score, playerNumber){
     var player = currentGame.getListOfPlayers()[playerNumber];
     console.log("Player (" + playerNumber + ") has shot:" + player.getScoreLeft());
     player.addScore(score);
-    console.log("Player has now shot: " + player.getScoreLeft());
+    console.log("Player has now shot: " + player.getScoreShot());
     for (var i = 0; i < currentGame.getNumberOfPlayers(); i++) {
         if (i === playerNumber) {
             continue;
         }
-        if (currentGame.getListOfPlayers()[i].getScoreLeft() === player.getScoreLeft()) {
+        if (currentGame.getListOfPlayers()[i].getScoreShot() === player.getScoreShot()) {
             currentGame.getListOfPlayers()[i].resetScore();
-            console.log("Unfortunatly the score was removed");
+            console.log("Unfortunately the score was removed");
         }
     }
     return true;
