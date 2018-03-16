@@ -4,13 +4,15 @@
  *
  * @param numberOfPlayers the number of players who will participate
  *
- * TODO Think about how to pass the value correctly.
  *
  */
 
 var currentGame = undefined;
-function startGame() {
-    currentGame = new Game(2);
+function startGame(playerNumber) {
+    if(playerNumber === undefined || !isInteger(playerNumber)){
+        throw new Error("Player number undefined");
+    }
+    currentGame = new Game(playerNumber);
 
     // TODO Test this for more than 2 players as well..
     shot(20,0);
@@ -37,26 +39,18 @@ function startGame() {
  */
 function shot(score, playerNumber){
 
-    if(!isInteger(score)){
-        alert("Score is not of type integer");
-        return false;
+    if (!isInteger(score)) {
+        throw new Error("Illegal score");
     }
-    // First step: retrieve the player object
     var player = currentGame.getListOfPlayers()[playerNumber];
     console.log("Player (" + playerNumber + ") has shot:" + player.getScoreLeft());
-
-    // Second step: Add the score to the player
-    // TODO Validate if the score doesn't get out of bounds
-    // TODO Check if the given score is a legal shot.
     player.addScore(score);
     console.log("Player has now shot: " + player.getScoreLeft());
-
-    // Third step: check if one player has exactly the same score, set it to zero in this case.
-    for(var i = 0; i < currentGame.getNumberOfPlayers(); i++){
-        if(i === playerNumber){
+    for (var i = 0; i < currentGame.getNumberOfPlayers(); i++) {
+        if (i === playerNumber) {
             continue;
         }
-        if(currentGame.getListOfPlayers()[i].getScoreLeft() === player.getScoreLeft()){
+        if (currentGame.getListOfPlayers()[i].getScoreLeft() === player.getScoreLeft()) {
             currentGame.getListOfPlayers()[i].resetScore();
             console.log("Unfortunatly the score was removed");
         }

@@ -5,18 +5,13 @@
 class Player {
 
     constructor(game, name) {
-        if (game == undefined) {
-            console.error("Invalid game instance passed to player. Cannot instantiate player correctly. Exit");
-            return;
+        if (game === undefined) {
+            throw new Error("Player recieved illegal game argument");
+        } else if (game instanceof Game === false) {
+            throw new Error("Player recieved illegal game argument");
         }
         this.game = game;
-
-        if (!isString(name)) {
-            this.name = "";
-        } else {
-            this.name = name;
-        }
-
+        this.name = !isString(name) ? "" : name;
         this.scoreLeft = 0;
 
     }
@@ -37,7 +32,6 @@ class Player {
         this.scoreLeft = 0;
     }
 
-    // TODO Make sure that it REALLY is an instance of the game class
     /* Instance of the Game class */
     getGame() {
         return this.game;
