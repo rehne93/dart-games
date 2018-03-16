@@ -17,17 +17,16 @@ function startGame(playerNumber) {
     // TODO Test this for more than 2 players as well..
     shot(20,0);
     shot(20,0);
-    shot(0,0);
+    shot(5,0);
 
     shot(19,1);
-    shot(21,1);
+    shot(26,1);
     shot(25,1);
 
     shot(20,0);
     shot(20,0);
     shot(25,0);
 
-    shot(1,1);
 }
 
 
@@ -39,11 +38,11 @@ function startGame(playerNumber) {
  */
 function shot(score, playerNumber){
 
-    if (!isInteger(score)) {
+    if (!isInteger(score) || !isInteger(playerNumber)) {
         throw new Error("Illegal score");
     }
     var player = currentGame.getListOfPlayers()[playerNumber];
-    console.log("Player (" + playerNumber + ") has shot:" + player.getScoreLeft());
+    console.log("Player (" + playerNumber + ") has shot:" + player.getScoreShot());
     player.addScore(score);
     console.log("Player has now shot: " + player.getScoreShot());
     for (var i = 0; i < currentGame.getNumberOfPlayers(); i++) {

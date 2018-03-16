@@ -5,10 +5,10 @@
 class Player {
 
     constructor(game, name) {
-        if (game === undefined) {
-            throw new Error("Player received illegal game argument");
+        if (!game) {
+            throw new Error("Player received illegal game instance");
         } else if (game instanceof Game === false) {
-            throw new Error("Player received illegal game argument");
+            throw new Error("Player received illegal game instance");
         }
         this.game = game;
         this.name = !isString(name) ? "" : name;

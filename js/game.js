@@ -6,20 +6,15 @@
  */
 class Game {
     constructor(numberOfPlayers, targetScore) {
-        if (!isInteger(numberOfPlayers)) {
-            console.error("Number of players is an illegal value. Cannot construct a valid game instance.");
-            return
+        if (!isInteger(numberOfPlayers) || !numberOfPlayers) {
+            throw new Error("Number of players is not a valid number");
         }
         this.numberOfPlayers = numberOfPlayers;
-        if (targetScore === undefined || !isInteger(targetScore)) {
-            this.targetScore = 301;
-        } else {
-            this.targetScore = targetScore;
-        }
+        this.targetScore = !targetScore || !isInteger(targetScore) ? 301 : targetScore;
         this.listOfPlayers = [numberOfPlayers];
 
         // Initialize Players
-        for (var i = 0; i < numberOfPlayers; i++) {
+        for (let i = 0; i < numberOfPlayers; i++) {
             this.listOfPlayers[i] = new Player(this);
         }
         console.log("Created " + numberOfPlayers + " new players.");
