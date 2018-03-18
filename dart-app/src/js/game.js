@@ -1,10 +1,13 @@
 /**
  * This class implements a game of X01 elimination.
  * The target score is set to 301 by default if nothing else is given.
- *
- *
  */
 class Game {
+    /**
+     *
+     * @param {number} numberOfPlayers
+     * @param {number} targetScore the score the player should gain
+     */
     constructor(numberOfPlayers, targetScore) {
         if (!isInteger(numberOfPlayers) || !numberOfPlayers) {
             throw new Error("Number of players is not a valid number");

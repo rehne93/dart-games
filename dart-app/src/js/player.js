@@ -4,6 +4,11 @@
  */
 class Player {
 
+    /**
+     *
+     * @param {Game} game the instance of the game object
+     * @param {string} name the name of the player [optional]
+     */
     constructor(game, name) {
         if (!game) {
             throw new Error("Player received illegal game instance");
