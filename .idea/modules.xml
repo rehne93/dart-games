@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/dart-x01-elimination.iml" filepath="$PROJECT_DIR$/.idea/dart-x01-elimination.iml" />
       <module fileurl="file://$PROJECT_DIR$/dart-x01-elimination.iml" filepath="$PROJECT_DIR$/dart-x01-elimination.iml" />
     </modules>
   </component>
