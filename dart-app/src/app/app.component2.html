@@ -1,12 +1,17 @@
 <html>
 <head>
-    <link rel="stylesheet" href="app.component.css">
+    <link ref="stylesheet" href="app.component.css">
 </head>
-<body onload="startGame(2)">
 
+<body onload="startGame(2)"> <!-- Start game galls the game method (see console) -->
+<div style="text-align:center; font-size:24px;">
+
+    <!--
 <h1>
-    Dart x01 Elimination
-</h1>
+        Dart x01 Elimination
+    </h1>    <img width="105" alt="Darts" src="pics/darts2.jpg">
+    -->
+</div>
 
 <div style="background-color:#eee; height:44px; width:410px; float:right;">
     <label for="usr">Punkte eingabe (Bitte jeden einzelnen Wurf seperat eingeben):</label>
@@ -14,7 +19,8 @@
     <button type="button" class="btn btn-primary btn-lg">Punkte</button>
 </div>
 
-<table border='1' style="background-color:#eee;">
+
+<table border='1'>
     <colgroup>
         <col width="100">
         <col width="100">
@@ -27,11 +33,11 @@
     </tr>
     <tr>
         <td id='round'>1</td>
-        <td id='player1' class='player first'></td>
+        <td id='player1' class='player first'>0</td>
         <td id='player2' class='player'>0</td>
     </tr>
 </table>
-
+-->
 <!-- JS Script imports for gamelogic starts here -->
 <!-- Order is important -->
 <script src="../js/typecheck.js"></script>
@@ -40,6 +46,5 @@
 <script src="../js/elimination.js"></script>
 <script src="../dart-app/src/app/app.module.ts"></script>
 <!-- At the end of the script to load HTML first -->
-
 </body>
 </html>

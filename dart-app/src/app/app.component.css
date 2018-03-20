@@ -1,0 +1,16 @@
+body {
+    background: url(pics/dart.jpg);
+    background-size: 100% 100%;
+}
+
+ h1 {
+     color: darkgreen;
+     font-family: verdana;
+     text-align: center;
+     font-size: 300%;
+ }
+p  {
+    color: red;
+    font-family: courier;
+    font-size: 160%;
+}
