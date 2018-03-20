@@ -25,6 +25,10 @@ function startGame(playerNumber) {
     shot(20,0);
     shot(25,0);
 
+
+    console.log(getScoreForPlayer(0));
+    console.log((getScoreForPlayer(1)));
+
 }
 
 
@@ -32,7 +36,7 @@ function startGame(playerNumber) {
  * Implements one shot.
  * @param {number} score of one dart
  * @param {number} playerNumber number of the player, beginning from zero
- * @return {bool} true if the player didn't bust, false otherwise
+ * @return {boolean} true if the player didn't bust, false otherwise
  */
 function shot(score, playerNumber){
 
@@ -44,9 +48,7 @@ function shot(score, playerNumber){
         return false;
     }
     var player = currentGame.getListOfPlayers()[playerNumber];
-    console.log("Player (" + playerNumber + ") has shot:" + player.getScoreShot());
     player.addScore(score);
-    console.log("Player has now shot: " + player.getScoreShot());
     for (var i = 0; i < currentGame.getNumberOfPlayers(); i++) {
         if (i === playerNumber) {
             continue;
@@ -57,6 +59,20 @@ function shot(score, playerNumber){
         }
     }
     return true;
+}
+
+
+/**
+ * Returns the score shot by a given player
+ * @param {number} playerNumber the number of the player, 0-based
+ * @return {number}  the score shot by the player
+ */
+function getScoreForPlayer(playerNumber){
+    if(!isInteger(playerNumber) || playerNumber > currentGame.getNumberOfPlayers()){
+        throw new Error("Illegal player number passed to get score for a specific player")
+    }
+
+    return currentGame.getListOfPlayers()[playerNumber].getScoreShot();
 }
 
 /**
