@@ -10,24 +10,24 @@ function startGame(playerNumber) {
     if(playerNumber === undefined || !isInteger(playerNumber)){
         throw new Error("Player number undefined");
     }
-    currentGame = new Game(playerNumber);
+    currentGame = new Game(playerNumber, 301);
 
     // TODO Test this for more than 2 players as well..
-    shot(20,0);
-    shot(20,0);
-    shot(5,0);
+    // shot(20,0);
+    // shot(20,0);
+    // shot(5,0);
+    //
+    // shot(19,1);
+    // shot(26,1);
+    // shot(25,1);
+    //
+    // shot(20,0);
+    // shot(20,0);
+    // shot(25,0);
 
-    shot(19,1);
-    shot(26,1);
-    shot(25,1);
-
-    shot(20,0);
-    shot(20,0);
-    shot(25,0);
-
-
-    console.log(getScoreForPlayer(0));
-    console.log((getScoreForPlayer(1)));
+    //
+    // console.log(getScoreForPlayer(0));
+    // console.log((getScoreForPlayer(1)));
 
 }
 

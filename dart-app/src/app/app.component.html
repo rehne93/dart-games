@@ -7,11 +7,11 @@
 <h1>
     Dart x01 Elimination
 </h1>
-
-<div style="background-color:#eee; height:44px; width:410px; float:right; margin-top: 5cm">
+<!-- divs need ids to be able to access contents inside -->
+<div id="shot_container" style="background-color:#eee; height:44px; width:410px; float:right; margin-top: 5cm">
     <label for="usr">Punkte eingabe (Bitte jeden einzelnen Wurf seperat eingeben):</label>
-    <input type="text" class="form-control" id="usr">
-    <button type="button" class="btn btn-primary btn-lg">Punkte</button>
+    <input type="text" id="usr">
+    <button type="button" class="btn btn-primary btn-lg" onclick="onShotClick()">Punkte</button>
 </div>
 
 <table border='1' style="background-color:#eee; margin-top: 5cm">
@@ -38,6 +38,7 @@
 <script src="../js/player.js"></script>
 <script src="../js/game.js"></script>
 <script src="../js/elimination.js"></script>
+<script src="../js/htmlinterface.js"></script>
 <!-- At the end of the script to load HTML first -->
 
 </body>
