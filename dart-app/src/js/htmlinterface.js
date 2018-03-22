@@ -23,10 +23,9 @@ function onShotClick() {
         console.log("Player " + i + " has score " + scoreLeftOfPlayer);
         // TODO add this result to the table of player i
         var stringScore = scoreLeftOfPlayer.toLocaleString();
-        writeIntoTable(stringScore);
+        writeIntoTable(stringScore,i);
     }
     if (!allowedToShot || dartShots === 3) {
-        // TODO Probably we need some fixing here
         currentPlayer = (currentPlayer + 1) % (currentGame.getNumberOfPlayers());
         dartShots = 0;
     }
@@ -35,16 +34,18 @@ function onShotClick() {
 }
 
 
-function writeIntoTable(scoreOfPlayer){
-    console.log(scoreOfPlayer);
+function writeIntoTable(scoreOfPlayer, currentPlayer){
     var id = "";
     if(currentPlayer === 0){
         id = "player1";
     }else{
         id = "player2";
     }
+    console.log("Current id is: " + id + ", score is: " + scoreOfPlayer);
     //depending on current player we need the right id
-    document.getElementById(id).innerText = scoreOfPlayer;
+    var cell = document.getElementById(id);
+    cell.value = scoreOfPlayer;
+    cell.innerText = scoreOfPlayer;
 }
 /**
  * Returns the element of a container if it exists
