@@ -87,3 +87,11 @@ function isLegalScore(score){
 
 }
 
+/**
+ * Function importent for the outprint in the html file.
+ */
+function output() {
+    var player1 = getScoreForPlayer(0);
+    var Oplayer1 = document.getElementById('player1');
+    Oplayer1.innerHTML = player1;
+}
