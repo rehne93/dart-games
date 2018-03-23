@@ -22,16 +22,18 @@ function startGame(playerNumber) {
  * @return {boolean} true if the player didn't bust, false otherwise
  */
 function shot(score, playerNumber) {
-
+        // TODO think about a better error mechanic
     if (!isInteger(score) || !isInteger(playerNumber)) {
         throw new Error("Illegal score");
     }
     if (!isLegalScore(score)) {
-        alert("The score " + score + " is not possible with one dart.");
         return false;
     }
     var player = currentGame.getListOfPlayers()[playerNumber];
     player.addScore(score);
+    if(player.getScoreShot() == currentGame.targetScore){
+        showAlert("Spieler " + (currentPlayer+1) + " hat gewonnen.");
+    }
     for (var i = 0; i < currentGame.getNumberOfPlayers(); i++) {
         if (i === playerNumber) {
             continue;

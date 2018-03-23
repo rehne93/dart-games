@@ -14,6 +14,10 @@ function onShotClick() {
     var scoreInt = parseInt(score);
     // Here we need to find a way to find out which player is playing currently
     var allowedToShot = shot(scoreInt, currentPlayer);
+    if(!allowedToShot){
+        showAlert("Bitte Eingabe prüfen, Wurf nicht möglich");
+        return false;
+    }
     dartShots++;
 
 
@@ -28,8 +32,6 @@ function onShotClick() {
         currentPlayer = (currentPlayer + 1) % (currentGame.getNumberOfPlayers());
         dartShots = 0;
     }
-
-
 }
 
 /**

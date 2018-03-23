@@ -7,3 +7,13 @@ function pressButton(buttonId) {
         document.getElementById(buttonId).click();
     }
 }
+
+/**
+ * Shows an alert.
+ * @param {string} message content of the alert
+ */
+function showAlert(message){
+    alert(message);
+}
+
+// TODO We need a method to toggle the new game button, should be invisible by default
