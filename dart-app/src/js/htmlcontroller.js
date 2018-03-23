@@ -34,17 +34,13 @@ function onShotClick() {
 }
 
 /**
- *
- * @param scoreOfPlayer
- * @param currentPlayer
+ * Sets the score into the table
+ * @param {string} scoreOfPlayer the score of the player for one shot
+ * @param {number} currentPlayer the player currently playing
  */
 function writeIntoTable(scoreOfPlayer, currentPlayer){
-    var id = "";
-    if(currentPlayer === 0){
-        id = "player1";
-    }else{
-        id = "player2";
-    }
+
+    var id = "player"+(currentPlayer+1).toLocaleString();
     console.log("Current id is: " + id + ", score is: " + scoreOfPlayer);
     //depending on current player we need the right id
     var cell = document.getElementById(id);
