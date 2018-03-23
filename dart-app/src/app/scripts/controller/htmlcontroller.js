@@ -1,3 +1,5 @@
+/** This file is the controller and interface for the htmlview */
+
 
 // The player currently shooting. Calculated by modulo operation
 var currentPlayer = 0;
