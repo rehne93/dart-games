@@ -2,13 +2,24 @@
 <head>
     <link rel="stylesheet" href="app.component.css">
 </head>
-<body onload="startGame(2)">
+<!-- <meta http-equiv="refresh" content="0; URL=main.html"> -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<body>
 
 <h1>
     Dart x01 Elimination
 </h1>
+
+<div style="background-color:#eee; height:24px; width:410px; float:left; margin-top: 3cm">
+    <label>Wie viele Spieler?</label>
+    <button type="button" class="btn btn-primary btn-lg" onclick="startGame(1)">1 Spieler</button>
+    <button type="button" class="btn btn-primary btn-lg" onclick="startGame(2)">2 Spieler</button>
+    <button type="button" class="btn btn-primary btn-lg" onclick="startGame(3)">3 Spieler</button>
+    <button type="button" class="btn btn-primary btn-lg" onclick="startGame(4)">4 Spieler</button>
+</div>
+
 <!-- divs need ids to be able to access contents inside -->
-<div id="shot_container" style="background-color:#eee; height:44px; width:410px; float:right; margin-top: 5cm">
+<div id="shot_container" style="background-color:#eee; height:44px; width:410px; float:right; margin-right: 1cm; margin-top:3cm">
     <label for="usr">Punkte eingabe (Bitte jeden einzelnen Wurf seperat eingeben):</label>
     <input type="text" id="usr">
     <button type="button" class="btn btn-primary btn-lg" onclick="onShotClick()">Punkte</button>
@@ -31,6 +42,13 @@
         <td id='player2' >0</td>
     </tr>
 </table>
+
+<div style= "float:bottom; text-align:center; margin-top:10cm;">
+    <button type="button" class="btn btn-primary btn-lg" onclick="startGame(2)"
+            style="background-color: green; height:40px; width:100px;">
+        Neustart
+    </button>
+</div>
 
 <!-- JS Script imports for gamelogic starts here -->
 <!-- Order is important -->

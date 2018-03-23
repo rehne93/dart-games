@@ -86,12 +86,3 @@ function isLegalScore(score){
     && score != 52 && score != 53 && score !== 55 && score !== 56 && score !== 58 && score !== 59 && score <= 60)
 
 }
-
-/**
- * Function importent for the outprint in the html file.
- */
-function output() {
-    var player1 = getScoreForPlayer(0);
-    var Oplayer1 = document.getElementById('player1');
-    Oplayer1.innerHTML = player1;
-}

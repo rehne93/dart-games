@@ -33,7 +33,11 @@ function onShotClick() {
 
 }
 
-
+/**
+ *
+ * @param scoreOfPlayer
+ * @param currentPlayer
+ */
 function writeIntoTable(scoreOfPlayer, currentPlayer){
     var id = "";
     if(currentPlayer === 0){
