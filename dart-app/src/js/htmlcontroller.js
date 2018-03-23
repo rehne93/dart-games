@@ -9,19 +9,16 @@ var dartShots = 0;
 function onShotClick() {
     //Gets score in score, e. g. 20 for one dart
     var score = getElementInsideContainer("shot_container", "usr").value;
-    // TODO give the input field a better id name, maybe change shot_container too
     var scoreInt = parseInt(score);
     // Here we need to find a way to find out which player is playing currently
     var allowedToShot = shot(scoreInt, currentPlayer);
     dartShots++;
-    // TODO Set the values of the table using the same way we get elements at score
 
 
     var scoresLeft = currentGame.getListOfPlayers();
     for(var i = 0; i < scoresLeft.length; i++){
         var scoreLeftOfPlayer = scoresLeft[i].getScoreShot();
         console.log("Player " + i + " has score " + scoreLeftOfPlayer);
-        // TODO add this result to the table of player i
         var stringScore = scoreLeftOfPlayer.toLocaleString();
         writeIntoTable(stringScore,i);
     }

@@ -17,7 +17,7 @@ class Game {
         this.listOfPlayers = [numberOfPlayers];
 
         // Initialize Players
-        for (let i = 0; i < numberOfPlayers; i++) {
+        for (var i = 0; i < numberOfPlayers; i++) {
             this.listOfPlayers[i] = new Player(this);
         }
         console.log("Created " + numberOfPlayers + " new players.");
