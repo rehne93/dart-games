@@ -5,7 +5,7 @@
  */
 function isInteger(value) {
     return !isNaN(value) &&
-        parseInt(Number(value)) == value &&
+        parseInt(Number(value)) === value &&
         !isNaN(parseInt(value, 10));
 }
 

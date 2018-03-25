@@ -2,37 +2,43 @@
 
 
 // The player currently shooting. Calculated by modulo operation
-var currentPlayer = 0;
+let currentPlayer = 0;
 // Dart shots by the current player. Should never exceed 3.
-var dartShots = 0;
+let dartShots = 0;
+
+
 /**
-* This method is called for every shot.
-*/
+ * This method implements the shot click button.
+ * @return {boolean} true if the shot was successful (= finished or legal), false otherwise.
+ */
 function onShotClick() {
-    //Gets score in score, e. g. 20 for one dart
-    var score = getElementInsideContainer("shot_container", "usr").value;
-    var scoreInt = parseInt(score);
-    // Here we need to find a way to find out which player is playing currently
-    var allowedToShot = shot(scoreInt, currentPlayer);
-    if(!allowedToShot){
+    let score = getElementInsideContainer("shot_container", "usr").value;
+    let scoreInt = parseInt(score);
+    let shotState = shot(scoreInt, currentPlayer);
+
+    // Illegal scores like 59 or something will be caught here
+    if (shotState === SHOT_STATE.illegal) {
         showAlert("Bitte Eingabe prüfen, Wurf nicht möglich");
-        return false;
+        return SHOT_VALIDITY.invalid;
     }
     dartShots++;
 
-
-    var scoresLeft = currentGame.getListOfPlayers();
-    for(var i = 0; i < scoresLeft.length; i++){
-        var scoreLeftOfPlayer = scoresLeft[i].getScoreShot();
+    // Check if some player will be set to zero
+    let scoresLeft = currentGame.getListOfPlayers();
+    for (let i = 0; i < scoresLeft.length; i++) {
+        let scoreLeftOfPlayer = scoresLeft[i].getScoreShot();
         console.log("Player " + i + " has score " + scoreLeftOfPlayer);
-        var stringScore = scoreLeftOfPlayer.toLocaleString();
+        let stringScore = scoreLeftOfPlayer.toLocaleString();
         writeIntoTable(stringScore,i);
     }
-    if (!allowedToShot || dartShots === 3) {
+    if (shotState === SHOT_STATE.bust || dartShots === 3) {
         currentPlayer = (currentPlayer + 1) % (currentGame.getNumberOfPlayers());
         dartShots = 0;
     }
+    return SHOT_VALIDITY.valid;
 }
+
+
 
 /**
  * Sets the score into the table
@@ -41,10 +47,10 @@ function onShotClick() {
  */
 function writeIntoTable(scoreOfPlayer, currentPlayer){
 
-    var id = "player"+(currentPlayer+1).toLocaleString();
+    let id = "player" + (currentPlayer + 1).toLocaleString();
     console.log("Current id is: " + id + ", score is: " + scoreOfPlayer);
     //depending on current player we need the right id
-    var cell = document.getElementById(id);
+    let cell = document.getElementById(id);
     cell.value = scoreOfPlayer;
     cell.innerText = scoreOfPlayer;
 }
@@ -55,7 +61,7 @@ function writeIntoTable(scoreOfPlayer, currentPlayer){
  * @return {any} the object if it exists, undefined otherwise
  */
 function getElementInsideContainer(containerID, childID) {
-    var elm = document.getElementById(childID);
-    var parent = elm ? elm.parentNode : {};
+    let elm = document.getElementById(childID);
+    let parent = elm ? elm.parentNode : {};
     return (parent.id && parent.id === containerID) ? elm : {};
 }

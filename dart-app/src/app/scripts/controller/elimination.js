@@ -5,7 +5,7 @@
  * @param {number} numberOfPlayers the number of players who will participate
  */
 
-var currentGame = undefined;
+let currentGame = undefined;
 
 function startGame(playerNumber) {
     if (playerNumber === undefined || !isInteger(playerNumber)) {
@@ -22,19 +22,24 @@ function startGame(playerNumber) {
  * @return {boolean} true if the player didn't bust, false otherwise
  */
 function shot(score, playerNumber) {
-        // TODO think about a better error mechanic
     if (!isInteger(score) || !isInteger(playerNumber)) {
         throw new Error("Illegal score");
     }
     if (!isLegalScore(score)) {
-        return false;
+        return SHOT_STATE.illegal;
     }
-    var player = currentGame.getListOfPlayers()[playerNumber];
+    let player = currentGame.getListOfPlayers()[playerNumber];
+    let validate_score_shot = player.getScoreShot() + score;
+    if (validate_score_shot > currentGame.getTargetScore() || validate_score_shot === (currentGame.getTargetScore() - 1)) {
+        showAlert("Busted");
+        return SHOT_STATE.bust;
+    }
     player.addScore(score);
-    if(player.getScoreShot() == currentGame.targetScore){
-        showAlert("Spieler " + (currentPlayer+1) + " hat gewonnen.");
+    if (player.getScoreShot() === currentGame.targetScore) {
+        showAlert("Spieler " + (currentPlayer + 1) + " hat gewonnen.");
+        return SHOT_STATE.finished;
     }
-    for (var i = 0; i < currentGame.getNumberOfPlayers(); i++) {
+    for (let i = 0; i < currentGame.getNumberOfPlayers(); i++) {
         if (i === playerNumber) {
             continue;
         }
@@ -43,7 +48,7 @@ function shot(score, playerNumber) {
             console.log("Unfortunately the score was removed");
         }
     }
-    return true;
+    return SHOT_STATE.legal;
 }
 
 
