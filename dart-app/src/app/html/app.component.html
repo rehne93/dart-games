@@ -4,7 +4,7 @@
 </head>
 <!-- <meta http-equiv="refresh" content="0; URL=main.html"> -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<body onload="startGame(2)"> <!-- debugging purposes -->
+<body> <!-- debugging purposes -->
 
 <h1>
     Dart x01 Elimination
@@ -12,7 +12,6 @@
 
 <div style="background-color:#eee; height:24px; width:410px; float:left; margin-top: 3cm">
     <label>Wie viele Spieler?</label>
-    <button type="button" class="btn btn-primary btn-lg" onclick="startGame(1)">1 Spieler</button>
     <button type="button" class="btn btn-primary btn-lg" onclick="startGame(2)">2 Spieler</button>
     <button type="button" class="btn btn-primary btn-lg" onclick="startGame(3)">3 Spieler</button>
     <button type="button" class="btn btn-primary btn-lg" onclick="startGame(4)">4 Spieler</button>
@@ -28,19 +27,22 @@
 
 <table border='1' style="background-color:#eee; margin-top: 5cm">
     <colgroup>
-        <col width="100">
-        <col width="100">
-        <col width="100">
+        <col width="200">
+        <col width="200">
+        <col width="200">
+        <col width="200">
     </colgroup>
     <tr>
-        <td>Round</td>
         <td>Player1</td>
         <td>Player2</td>
+        <td>Player3</td>
+        <td>Player4</td>
     </tr>
     <tr>
-        <td id='round'>1</td>
         <td id='player1'>0</td>
         <td id='player2'>0</td>
+        <td id='player3'>0</td>
+        <td id='player4'>0</td>
     </tr>
 </table>
 
