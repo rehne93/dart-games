@@ -12,15 +12,18 @@ let dartShots = 0;
  * @return {boolean} true if the shot was successful (= finished or legal), false otherwise.
  */
 function onShotClick() {
+
     let score = getElementInsideContainer("shot_container", "usr").value;
     let scoreInt = parseInt(score);
     let shotState = shot(scoreInt, currentPlayer);
+
 
     // Illegal scores like 59 or something will be caught here
     if (shotState === SHOT_STATE.illegal) {
         showAlert("Bitte Eingabe prüfen, Wurf nicht möglich");
         return SHOT_VALIDITY.invalid;
     }
+    resetContent(getElementInsideContainer("shot_container", "usr"));
     dartShots++;
 
     // Check if some player will be set to zero
@@ -35,6 +38,7 @@ function onShotClick() {
         currentPlayer = (currentPlayer + 1) % (currentGame.getNumberOfPlayers());
         dartShots = 0;
     }
+    setCurrentPlayer(currentPlayer + 1);
     return SHOT_VALIDITY.valid;
 }
 

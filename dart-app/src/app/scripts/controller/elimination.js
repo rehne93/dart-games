@@ -11,6 +11,7 @@ function startGame(playerNumber) {
     if (playerNumber === undefined || !isInteger(playerNumber)) {
         throw new Error("Player number undefined");
     }
+    setCurrentPlayer(currentPlayer + 1);
     currentGame = new Game(playerNumber, 301);
 }
 
