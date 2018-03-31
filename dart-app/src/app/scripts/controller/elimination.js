@@ -12,6 +12,7 @@ function startGame(playerNumber) {
         throw new Error("Player number undefined");
     }
     setCurrentPlayer(currentPlayer + 1);
+    layoutTable(playerNumber);
     currentGame = new Game(playerNumber, 301);
 }
 

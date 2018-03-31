@@ -28,7 +28,7 @@
 </div>
 <label id="currentPlayer"> </label>
 
-<table border='1' class="center">
+<table border='1' class="center" id="scoreTable">
     <colgroup>
         <col width="200">
         <col width="200">
@@ -36,10 +36,10 @@
         <col width="200">
     </colgroup>
     <tr>
-        <td>Player1</td>
-        <td>Player2</td>
-        <td>Player3</td>
-        <td>Player4</td>
+        <td id="p1label">Player1</td>
+        <td id="p2label">Player2</td>
+        <td id="p3label">Player3</td>
+        <td id="p4label">Player4</td>
     </tr>
     <tr>
         <td id='player1'>0</td>
@@ -49,12 +49,6 @@
     </tr>
 </table>
 
-<div style="float:bottom; text-align:center; margin-top:10cm;">
-    <button type="button" class="btn btn-primary btn-lg" onclick="startGame(2)"
-            style="height:40px; width:100px;">
-        Neustart
-    </button>
-</div>
 
 <!-- JS Script imports for game logic starts here -->
 <!-- Order is important -->

@@ -32,4 +32,24 @@ function resetContent(element) {
     element.value = "";
 }
 
+function layoutTable(numOfPlayers) {
+    if (numOfPlayers === 4) {
+        document.getElementById("p4label").style.visibility = "visible";
+        document.getElementById("player4").style.visibility = "visible";
+        document.getElementById("p3label").style.visibility = "visible";
+        document.getElementById("player3").style.visibility = "visible";
+    }
+    if (numOfPlayers === 3) {
+        document.getElementById("p4label").style.visibility = "collapse";
+        document.getElementById("player4").style.visibility = "collapse";
+        document.getElementById("p3label").style.visibility = "visible";
+        document.getElementById("player3").style.visibility = "visible";
+    }
+    if (numOfPlayers === 2) {
+        document.getElementById("p4label").style.visibility = "collapse";
+        document.getElementById("player4").style.visibility = "collapse";
+        document.getElementById("p3label").style.visibility = "collapse";
+        document.getElementById("player3").style.visibility = "collapse";
+    }
+}
 // TODO We need a method to toggle the new game button, should be invisible by default
