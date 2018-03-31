@@ -1,16 +1,73 @@
-body {
-    background: url(../resources/pics/dart.jpg);
-    background-size: 100% 100%;
+h1 {
+    color: darkgreen;
+    font-family: verdana;
+    text-align: center;
+    font-size: 300%;
 }
 
- h1 {
-     color: darkgreen;
-     font-family: verdana;
-     text-align: center;
-     font-size: 300%;
- }
-p  {
+p {
     color: red;
-    font-family: courier;
+    font-family: "Courier New";
     font-size: 160%;
+}
+
+button.buttonStyle {
+    text-align: center;
+    font-size: 30px;
+    border-radius: 15px;
+    background-color: darkgreen;
+    color: white;
+    margin-top: 10px;
+}
+
+input.usrInput {
+    padding: 12px 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 20px;
+    text-align: center;
+}
+
+/* Layout for table */
+table.center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+table, th, td {
+    border: 1px solid black;
+    text-align: center;
+}
+
+th, td {
+    padding: 15px;
+}
+
+td {
+    font-family: Arial;
+    font-size: 30px;
+}
+
+/* IDS */
+#player_number {
+    float: top;
+    margin-top: 3cm;
+    text-align: center;
+    font-size: 25px;
+}
+
+#currentPlayer {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: block;
+    text-align: center;
+    font-size: 30px;
+    float: top;
+}
+
+#shot_container {
+    margin-right: 1cm;
+    margin-top: 1cm;
+    text-align: center;
+    font-size: 25px;
 }
