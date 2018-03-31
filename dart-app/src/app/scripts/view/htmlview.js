@@ -32,6 +32,10 @@ function resetContent(element) {
     element.value = "";
 }
 
+/**
+ * Removes unneccessary player columns depending on the number of players
+ * @param numOfPlayers the number of players that participate
+ */
 function layoutTable(numOfPlayers) {
     if (numOfPlayers === 4) {
         document.getElementById("p4label").style.visibility = "visible";
@@ -51,5 +55,16 @@ function layoutTable(numOfPlayers) {
         document.getElementById("p3label").style.visibility = "collapse";
         document.getElementById("player3").style.visibility = "collapse";
     }
+}
+
+/**
+ * Resets the table scores.
+ * Is used everytime the "player buttons" are pressed
+ */
+function emptyTableContent() {
+    document.getElementById("player4").innerText = "0";
+    document.getElementById("player3").innerText = "0";
+    document.getElementById("player2").innerText = "0";
+    document.getElementById("player1").innerText = "0";
 }
 // TODO We need a method to toggle the new game button, should be invisible by default
