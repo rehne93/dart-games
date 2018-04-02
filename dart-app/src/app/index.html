@@ -1,16 +1,18 @@
 <html>
 <head>
     <link rel="stylesheet" href="css/app.component.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <!-- <meta http-equiv="refresh" content="0; URL=main.html"> -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<body> <!-- debugging purposes -->
-
-<h1>
+<body>
+<div id="headline" class="container"><h1>
     Dart x01 Elimination
-</h1>
+</h1></div>
 
-<div id="player_number">
+<div id="player_number" class="container">
     <label>Wie viele Spieler?</label>
     <br>
     <button id="2p" type="button" class="buttonStyle" onclick="startGame(2)">2</button>
@@ -19,8 +21,8 @@
 </div>
 <br>
 <!-- divs need ids to be able to access contents inside -->
-<div id="shot_container">
-    <label for="usr">Punkte eingabe (Bitte jeden einzelnen Wurf seperat eingeben):</label>
+<div id="shot_container" class="container">
+    <label for="usr">Score pro Dart:</label>
     <br>
     <input id="usr" type="text" class="usrInput" onkeydown="pressButton('shotButton')">
     <br>
@@ -28,27 +30,29 @@
 </div>
 <label id="currentPlayer"> </label>
 
-<table border='1' class="center" id="scoreTable">
-    <colgroup>
-        <col width="200">
-        <col width="200">
-        <col width="200">
-        <col width="200">
-    </colgroup>
+<div class="table-responsive">
+    <table border='1' class="table table-fixexd table-responsive" id="scoreTable">
+        <thead>
     <tr>
-        <td id="p1label">Player1</td>
-        <td id="p2label">Player2</td>
-        <td id="p3label">Player3</td>
-        <td id="p4label">Player4</td>
-    </tr>
-    <tr>
-        <td id='player1'>0</td>
-        <td id='player2'>0</td>
-        <td id='player3'>0</td>
-        <td id='player4'>0</td>
-    </tr>
-</table>
+        <th id="p1label"> Player 1</th>
+        <th id="p2label"> Player 2</th>
+        <th id="p3label"> Player 3</th>
+        <th id="p4label"> Player 4</th>
 
+    </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <th id="player1">0</th>
+            <th id="player2">0</th>
+            <th id="player3">0</th>
+            <th id="player4">0</th>
+        </tr>
+        </tbody>
+
+
+    </table>
+</div>
 
 <!-- JS Script imports for game logic starts here -->
 <!-- Order is important -->

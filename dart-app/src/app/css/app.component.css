@@ -2,7 +2,6 @@ h1 {
     color: darkgreen;
     font-family: verdana;
     text-align: center;
-    font-size: 300%;
 }
 
 p {
@@ -26,12 +25,7 @@ input.usrInput {
     margin-bottom: 10px;
     font-size: 20px;
     text-align: center;
-}
-
-/* Layout for table */
-table.center {
-    width: auto;
-    margin: auto;
+    width: 50%;
 }
 
 table, th, td {
@@ -40,8 +34,8 @@ table, th, td {
     text-align: center;
 }
 
-th, td {
-    padding: 15px;
+th {
+    width: 20%;
 }
 
 td {
@@ -51,10 +45,17 @@ td {
 
 /* IDS */
 #player_number {
+    margin-top: 5%;
     float: top;
-    margin-top: 3cm;
     text-align: center;
     font-size: 25px;
+    width: 50%;
+}
+
+#shot_container {
+    margin-top: 5%;
+    font-size: 25px;
+    text-align: center;
 }
 
 #currentPlayer {
@@ -64,11 +65,4 @@ td {
     text-align: center;
     font-size: 30px;
     float: top;
-}
-
-#shot_container {
-    margin-right: 1cm;
-    margin-top: 1cm;
-    text-align: center;
-    font-size: 25px;
 }
