@@ -5,7 +5,8 @@
 let currentPlayer = 0;
 // Dart shots by the current player. Should never exceed 3.
 let dartShots = 0;
-
+// Old score in case of bust
+let oldScore = 0;
 
 /**
  * This method implements the shot click button.
@@ -35,8 +36,14 @@ function onShotClick() {
         writeIntoTable(stringScore,i);
     }
     if (shotState === SHOT_STATE.bust || dartShots === 3) {
+        if (shotState === SHOT_STATE.bust) {
+            let player = currentGame.getListOfPlayers()[currentPlayer];
+            player.setScore(oldScore);
+            writeIntoTable(player.getScoreShot().toLocaleString(), currentPlayer);
+        }
         currentPlayer = (currentPlayer + 1) % (currentGame.getNumberOfPlayers());
         dartShots = 0;
+        oldScore = getScoreForPlayer(currentPlayer);
     }
     setCurrentPlayer(currentPlayer + 1);
     return SHOT_VALIDITY.valid;

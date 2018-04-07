@@ -38,6 +38,9 @@ class Player {
         this.scoreShot = 0;
     }
 
+    setScore(score) {
+        this.scoreShot = score;
+    }
     /* Instance of the Game class */
     getGame() {
         return this.game;

@@ -77,5 +77,4 @@ function isLegalScore(score) {
         !== 31 && score !== 35 && score !== 37
         && score !== 41 && score !== 43 && score !== 44 && score !== 46 && score !== 47 && score !== 49
         && score != 52 && score != 53 && score !== 55 && score !== 56 && score !== 58 && score !== 59 && score <= 60)
-
 }
