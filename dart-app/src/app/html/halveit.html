@@ -1,29 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="../css/halveit.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <meta charset="UTF-8">
     <title>Halve it!</title>
 </head>
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <body>
 <div id="headline" class="container"><h1>
     Halve it!
 </h1></div>
+
 <div id="current_target" class="container">
-    <label id="targetInfo"></label>
+    <label id="targetInfo"> </label>
 </div>
+
 <div id="shot_container" class="container">
-    <label for="usr">Score pro Dart:</label>
+    <label for="usrInput">Score pro drei Dart:</label>
     <br>
-    <input id="usr" type="text" class="usrInput">
+    <input id="usrInput" type="text" class="usrInput">
     <br>
     <button id="shotButton" type="button" class="buttonStyle" onclick="addScore()">Score</button>
 </div>
-<label id="currentPlayerScore"> </label>
 
+<div id="player_stats">
+    <label id="currentPlayerScore"> </label>
+</div>
 
 <script src="../scripts/controller/halveit.js"></script>
+<script src="../scripts/util/typecheck.js"></script>
 </body>
 </html>

@@ -1,0 +1,22 @@
+#choose_game {
+    text-align: center;
+    font-size: 35px;
+    font-family: verdana;
+
+}
+
+button.buttonStyle {
+    text-align: center;
+    font-size: 30px;
+    border-radius: 15px;
+    background-color: darkgreen;
+    color: white;
+    margin-top: 10px;
+}
+
+#implementation_details {
+    margin-top: 20%;
+    text-align: center;
+    font-size: 18px;
+    font-family: "Courier New";
+}
