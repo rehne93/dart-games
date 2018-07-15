@@ -56,7 +56,7 @@ function endGameCondition() {
     if (lastTargetPosition() === 0) {
         alert("Finished Game! Score: " + currentScore);
         currentScore = 40;
-
+        $("#currentPlayerScore").text(SCORE + currentScore);
     }
 }
 
