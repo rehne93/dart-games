@@ -10,6 +10,13 @@ p {
     font-size: 160%;
 }
 
+/* IDS */
+#player_number {
+    float: top;
+    text-align: center;
+    font-size: 25px;
+    width: 50%;
+}
 button.buttonStyle {
     text-align: center;
     font-size: 30px;
@@ -21,7 +28,6 @@ button.buttonStyle {
 
 input.usrInput {
     padding: 12px 20px;
-    margin-top: 10px;
     margin-bottom: 10px;
     font-size: 20px;
     text-align: center;
@@ -45,7 +51,7 @@ td {
 
 /* IDS */
 #shot_container {
-    margin-top: 3%;
+    margin-top: 1%;
     font-size: 25px;
     text-align: center;
 }

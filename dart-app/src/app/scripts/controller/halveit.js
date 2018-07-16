@@ -1,4 +1,4 @@
-let currentScore = [40, 40, 40, 40];
+let currentScore = [0, 0, 0, 0];
 let numOfPlayers = 1;
 let playerPlaying = 0;
 let targetLists = ["15", "16", "Any double", "17", "18", "Any triple", "19", "20", "Bull"];
@@ -16,20 +16,38 @@ $(document).bind('keypress', function (e) {
     }
 });
 
+function setNumOfPlayer(number) {
+    numOfPlayers = parseInt(number);
+    console.log("Number of players: " + numOfPlayers);
+    init();
+}
+
 /**
  * Set default values on initialization
  */
 $(function () {
+    init();
+});
+
+function init() {
     $("#targetInfo").text(TARGET + targetLists[currentTargetPosition]);
     $("#currentPlayer").text(CURRENT_PLAYER + (playerPlaying + 1));
+    for (let i = 0; i < currentScore.length; i++) {
+        currentScore[i] = 0;
+    }
+    for (let j = 0; j < numOfPlayers; j++) {
+        console.log("Setting position: " + j + " to 40.");
+        currentScore[j] = 40;
+    }
+
     refreshTableScores();
-});
+}
 
 /**
  * Refreshes the table scores with the current score for every player.
  */
 function refreshTableScores() {
-    for (let i = 0; i < numOfPlayers; i++) {
+    for (let i = 0; i < currentScore.length; i++) {
         writeIntoTable(currentScore[i], i);
     }
 }

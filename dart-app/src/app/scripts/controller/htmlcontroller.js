@@ -33,7 +33,7 @@ function onShotClick() {
         let scoreLeftOfPlayer = scoresLeft[i].getScoreShot();
         console.log("Player " + i + " has score " + scoreLeftOfPlayer);
         let stringScore = scoreLeftOfPlayer.toLocaleString();
-        writeIntoTable(stringScore,i);
+        writeIntoTable(stringScore, i);
     }
     if (shotState === SHOT_STATE.bust || dartShots === 3) {
         if (shotState === SHOT_STATE.bust) {
@@ -50,13 +50,12 @@ function onShotClick() {
 }
 
 
-
 /**
  * Sets the score into the table
  * @param {string} scoreOfPlayer the score of the player for one shot
  * @param {number} currentPlayer the player currently playing
  */
-function writeIntoTable(scoreOfPlayer, currentPlayer){
+function writeIntoTable(scoreOfPlayer, currentPlayer) {
 
     let id = "player" + (currentPlayer + 1).toLocaleString();
     console.log("Current id is: " + id + ", score is: " + scoreOfPlayer);
@@ -65,6 +64,7 @@ function writeIntoTable(scoreOfPlayer, currentPlayer){
     cell.value = scoreOfPlayer;
     cell.innerText = scoreOfPlayer;
 }
+
 /**
  * Returns the element of a container if it exists
  * @param {string} containerID the id of the container (probably div)
@@ -75,4 +75,9 @@ function getElementInsideContainer(containerID, childID) {
     let elm = document.getElementById(childID);
     let parent = elm ? elm.parentNode : {};
     return (parent.id && parent.id === containerID) ? elm : {};
+}
+
+function greyOutColumns(numOfPlayers) {
+    let colIndex = $("scoreTable").index();
+    $("td, th").filter(":nth-child(" + (colIndex + 1) + ")").css("background-color", "red")​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​;
 }
