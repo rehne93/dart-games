@@ -4,8 +4,8 @@ let playerPlaying = 0;
 let targetLists = ["15", "16", "Any double", "17", "18", "Any triple", "19", "20", "Bull"];
 let currentTargetPosition = 0;
 let gameStarted = false;
-const TARGET = "Next target: ";
-const CURRENT_PLAYER = "Current Player: ";
+const TARGET = "";
+const CURRENT_PLAYER = "Spieler: ";
 
 /**
  * Enter key is able to press shot button
@@ -38,7 +38,7 @@ $(function () {
 
 function init() {
     layoutTable(numOfPlayers);
-    $("#targetInfo").text(TARGET + targetLists[currentTargetPosition]);
+    $("#target").text(TARGET + targetLists[currentTargetPosition]);
     $("#currentPlayer").text(CURRENT_PLAYER + (playerPlaying + 1));
     for (let i = 0; i < currentScore.length; i++) {
         currentScore[i] = 0;
@@ -85,7 +85,7 @@ function addScore() {
     if (incrementPlayerCounter()) {
         incrementTargetPosition();
         gameStarted = true;
-        $("#targetInfo").text(TARGET + targetLists[currentTargetPosition]);
+        $("#target").text(TARGET + targetLists[currentTargetPosition]);
     }
     clearText();
     endGameCondition();

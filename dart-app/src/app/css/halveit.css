@@ -2,6 +2,7 @@ h1 {
     color: darkgreen;
     font-family: verdana;
     text-align: center;
+    font-size: 200%;
 }
 
 p {
@@ -10,43 +11,27 @@ p {
     font-size: 160%;
 }
 
+label {
+    white-space: nowrap;
+}
+
+.flex-container {
+    margin-top: 3%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center; /*centers items on the line (the x-axis by default)*/
+    align-items: center;
+    flex-wrap: nowrap;
+    algin-content: center;
+
+}
+
 /* IDS */
 #player_number {
     float: top;
     text-align: center;
-    font-size: 25px;
-    width: 50%;
-}
-button.buttonStyle {
-    text-align: center;
-    font-size: 30px;
-    border-radius: 15px;
-    background-color: darkgreen;
-    color: white;
-    margin-top: 10px;
-}
-
-input.usrInput {
-    padding: 12px 20px;
-    margin-bottom: 10px;
     font-size: 20px;
-    text-align: center;
     width: 50%;
-}
-
-table, th, td {
-    border-spacing: 0;
-    border-collapse: collapse;
-    text-align: center;
-}
-
-th {
-    width: 20%;
-}
-
-td {
-    font-family: Arial;
-    font-size: 30px;
 }
 
 /* IDS */
@@ -56,10 +41,24 @@ td {
     text-align: center;
 }
 
+#player_stats {
+    margin-right: 3%;
+    font-size: 25px;
+    margin-left: 5%;
+}
+
 #current_target {
     margin-top: 3%;
-    font-size: 35px;
+    font-size: 30px;
     text-align: center;
+    color: darkgreen;
+}
+
+#target {
+    background: darkgreen;
+    padding: 10px;
+    border-radius: 50%;
+    color: white;
 }
 
 #player_stats {
@@ -74,3 +73,45 @@ td {
     font-family: verdana;
 }
 
+button.buttonStyle {
+    padding: 4px 8px;
+    text-align: center;
+    font-size: 30px;
+    border-radius: 4px;
+    border: 1px;
+    background-color: darkgreen;
+    color: white;
+    margin-top: 10px;
+}
+
+input.usrInput {
+    padding: 4px 8px;
+    margin-bottom: 10px;
+    font-size: 27px;
+    text-align: center;
+}
+
+.table {
+    margin-top: 3%;
+    border-collapse: collapse;
+}
+
+.th {
+    font-family: Arial;
+    font-size: 40px;
+}
+
+/*
+table, th, td {
+    text-align: center;
+    width: 50%;
+}
+*/
+
+/*
+th {
+    width: 20%;
+}
+
+
+*/

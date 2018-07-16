@@ -11,60 +11,69 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <body>
-<div id="headline" class="container"><h1>
-    Halve it!
-</h1></div>
-<div id="player_number" class="container">
-    <label>Wie viele Spieler?</label>
-    <br>
-    <button id="1p" type="button" class="buttonStyle" onclick="setNumOfPlayer(1)" style="background-color:grey">1
-    </button>
-    <button id="2p" type="button" class="buttonStyle" onclick="setNumOfPlayer(2)">2</button>
-    <button id="3p" type="button" class="buttonStyle" onclick="setNumOfPlayer(3)">3</button>
-    <button id="4p" type="button" class="buttonStyle" onclick="setNumOfPlayer(4)">4</button>
-</div>
-<div id="current_target" class="container">
-    <label id="targetInfo"> </label>
-</div>
-
-<div id="shot_container" class="container">
-    <label for="usrInput">Score pro drei Dart:</label>
-    <br>
-    <input id="usrInput" type="text" class="usrInput">
-    <br>
-    <div id="rules" class="container">
-        <label id="ruleText"> Enter 0 if the target didn't get hit and the score should be halved. Any other number will
-            lead to another try.</label>
+<div style="width: 70vw">
+    <div id="player-container" class="flex-container">
+        <div id="headline" class="container"><h1>
+            Halve it!
+        </h1></div>
+        <div id="player_number" class="container">
+            <label>Wie viele Spieler?</label>
+            <br>
+            <button id="1p" type="button" class="buttonStyle" onclick="setNumOfPlayer(1)" style="background-color:grey">
+                1
+            </button>
+            <button id="2p" type="button" class="buttonStyle" onclick="setNumOfPlayer(2)">2</button>
+            <button id="3p" type="button" class="buttonStyle" onclick="setNumOfPlayer(3)">3</button>
+            <button id="4p" type="button" class="buttonStyle" onclick="setNumOfPlayer(4)">4</button>
+        </div>
     </div>
-    <button id="shotButton" type="button" class="buttonStyle" onclick="addScore()">Score</button>
+</div>
+<div style="width: 80vw" id="shot-informations" class="flex-container">
+    <div id="player_stats">
+        <label id="currentPlayer"> </label>
+    </div>
+    <div id="current_target" class="container">
+        <label id="targetInfo">Ziel: <label id="target"></label></label>
+    </div>
+    <div id="shot_container" class="container">
+        <input id="usrInput" type="text" class="usrInput">
+        <button id="shotButton" type="button" class="buttonStyle" onclick="addScore()">Score</button>
+        <div id="rules" class="container">
+            <label id="ruleText"> Enter 0 if the target didn't get hit and the score should be halved. Any other
+                number
+                will
+                lead to another try.</label>
+        </div>
+    </div>
+</div>
+</div>
+<div style="width: 70vw">
+    <div id="player-stats" class="flex-container">
+        <div class="table-responsive">
+            <table border='1' class="table table-fixexd table-responsive" id="scoreTable">
+                <thead>
+                <tr>
+                    <th id="p1label"> Player 1</th>
+                    <th id="p2label"> Player 2</th>
+                    <th id="p3label"> Player 3</th>
+                    <th id="p4label"> Player 4</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th id="player1">0</th>
+                    <th id="player2">0</th>
+                    <th id="player3">0</th>
+                    <th id="player4">0</th>
+                </tr>
+                </tbody>
+
+
+            </table>
+        </div>
+    </div>
 </div>
 
-<div id="player_stats">
-    <label id="currentPlayer"> </label>
-</div>
-<div class="table-responsive">
-    <table border='1' class="table table-fixexd table-responsive" id="scoreTable">
-        <thead>
-        <tr>
-            <th id="p1label"> Player 1</th>
-            <th id="p2label"> Player 2</th>
-            <th id="p3label"> Player 3</th>
-            <th id="p4label"> Player 4</th>
-
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <th id="player1">0</th>
-            <th id="player2">0</th>
-            <th id="player3">0</th>
-            <th id="player4">0</th>
-        </tr>
-        </tbody>
-
-
-    </table>
-</div>
 <script src="../scripts/view/htmlview.js"></script>
 <script src="../scripts/controller/htmlcontroller.js"></script>
 <script src="../scripts/controller/halveit.js"></script>
