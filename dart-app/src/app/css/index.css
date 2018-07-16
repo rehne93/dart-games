@@ -1,9 +1,11 @@
-#choose_game {
-    text-align: center;
+.container {
+    text-align: left;
+    float: left;
     font-size: 35px;
     font-family: verdana;
-
+    margin: 5% 10%;
 }
+
 
 button.buttonStyle {
     text-align: center;
@@ -14,9 +16,11 @@ button.buttonStyle {
     margin-top: 10px;
 }
 
+
 #implementation_details {
-    margin-top: 20%;
     text-align: center;
     font-size: 18px;
     font-family: "Courier New";
+    float: bottom;
+    width: auto;
 }
