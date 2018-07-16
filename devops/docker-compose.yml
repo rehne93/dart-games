@@ -2,7 +2,7 @@ version: '3.3'
 
 services:
   webservice:
-    container_name: x01elimination
+    container_name: dart-games
     image: nginx:latest
     ports:
     - "80:80"
