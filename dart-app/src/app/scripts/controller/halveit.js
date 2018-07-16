@@ -19,6 +19,13 @@ $(document).bind('keypress', function (e) {
 function setNumOfPlayer(number) {
     numOfPlayers = parseInt(number);
     console.log("Number of players: " + numOfPlayers);
+    for (let i = 1; i <= 4; i++) {
+        if (i === numOfPlayers) {
+            setButtonColor(i, "grey");
+        } else {
+            setButtonColor(i, "darkgreen");
+        }
+    }
     init();
 }
 
@@ -30,6 +37,7 @@ $(function () {
 });
 
 function init() {
+    layoutTable(numOfPlayers);
     $("#targetInfo").text(TARGET + targetLists[currentTargetPosition]);
     $("#currentPlayer").text(CURRENT_PLAYER + (playerPlaying + 1));
     for (let i = 0; i < currentScore.length; i++) {
@@ -95,9 +103,6 @@ function endGameCondition() {
             currentScore[i] = 40;
         }
         init();
-
-
-
     }
 }
 

@@ -42,18 +42,33 @@ function layoutTable(numOfPlayers) {
         document.getElementById("player4").style.visibility = "visible";
         document.getElementById("p3label").style.visibility = "visible";
         document.getElementById("player3").style.visibility = "visible";
+        document.getElementById("player2").style.visibility = "visible";
+        document.getElementById("p2label").style.visibility = "visible";
     }
     if (numOfPlayers === 3) {
         document.getElementById("p4label").style.visibility = "collapse";
         document.getElementById("player4").style.visibility = "collapse";
         document.getElementById("p3label").style.visibility = "visible";
         document.getElementById("player3").style.visibility = "visible";
+        document.getElementById("player2").style.visibility = "visible";
+        document.getElementById("p2label").style.visibility = "visible";
     }
     if (numOfPlayers === 2) {
         document.getElementById("p4label").style.visibility = "collapse";
         document.getElementById("player4").style.visibility = "collapse";
         document.getElementById("p3label").style.visibility = "collapse";
         document.getElementById("player3").style.visibility = "collapse";
+        document.getElementById("player2").style.visibility = "visible";
+        document.getElementById("p2label").style.visibility = "visible";
+    }
+    if (numOfPlayers === 1) {
+        console.log("In here");
+        document.getElementById("p4label").style.visibility = "collapse";
+        document.getElementById("player4").style.visibility = "collapse";
+        document.getElementById("p3label").style.visibility = "collapse";
+        document.getElementById("player3").style.visibility = "collapse";
+        document.getElementById("player2").style.visibility = "collapse";
+        document.getElementById("p2label").style.visibility = "collapse";
     }
 }
 
@@ -67,4 +82,5 @@ function emptyTableContent() {
     document.getElementById("player2").innerText = "0";
     document.getElementById("player1").innerText = "0";
 }
+
 // TODO We need a method to toggle the new game button, should be invisible by default

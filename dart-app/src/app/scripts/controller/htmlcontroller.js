@@ -75,3 +75,7 @@ function getElementInsideContainer(containerID, childID) {
     let parent = elm ? elm.parentNode : {};
     return (parent.id && parent.id === containerID) ? elm : {};
 }
+
+function setButtonColor(playerNumber, color) {
+    $("#" + playerNumber + "p").css("background-color", color);
+}

@@ -14,6 +14,13 @@ function startGame(playerNumber) {
     setCurrentPlayer(currentPlayer + 1);
     emptyTableContent();
     layoutTable(playerNumber);
+    for (let i = 2; i <= 4; i++) {
+        if (i === playerNumber) {
+            setButtonColor(i, "grey");
+        } else {
+            setButtonColor(i, "darkgreen");
+        }
+    }
     currentGame = new Game(playerNumber, 301);
 }
 
