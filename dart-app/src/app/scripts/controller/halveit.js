@@ -1,9 +1,11 @@
-let currentScore = 40;
+let currentScore = [40, 40, 40, 40];
+let numOfPlayers = 1;
+let playerPlaying = 0;
 let targetLists = ["15", "16", "Any double", "17", "18", "Any triple", "19", "20", "Bull"];
 let currentTargetPosition = 0;
-
+let gameStarted = false;
 const TARGET = "Next target: ";
-const SCORE = "Your score: ";
+const CURRENT_PLAYER = "Current Player: ";
 
 /**
  * Enter key is able to press shot button
@@ -19,45 +21,70 @@ $(document).bind('keypress', function (e) {
  */
 $(function () {
     $("#targetInfo").text(TARGET + targetLists[currentTargetPosition]);
-    $("#currentPlayerScore").text(SCORE + currentScore);
-    incrementTargetPosition();
+    $("#currentPlayer").text(CURRENT_PLAYER + (playerPlaying + 1));
+    refreshTableScores();
 });
+
+/**
+ * Refreshes the table scores with the current score for every player.
+ */
+function refreshTableScores() {
+    for (let i = 0; i < numOfPlayers; i++) {
+        writeIntoTable(currentScore[i], i);
+    }
+}
 
 /**
  * Main functionality that runs one program flow.
  */
 function addScore() {
+
     let score = parseInt($("#usrInput").val());
 
     if (!isInteger(score) || score > 180 || score < 0) {
         alert("No valid input at field, must be integer.");
         return;
     }
-    $("#targetInfo").text(TARGET + targetLists[currentTargetPosition]);
-    if (legalAt(score, targetLists[lastTargetPosition()]) && score !== 0) {
-        currentScore += score;
-        console.log("Current socre: " + currentScore);
+    if (legalAt(score, targetLists[currentTargetPosition]) && score !== 0) {
+        currentScore[playerPlaying] += score;
     } else {
-        currentScore /= 2;
-        currentScore = Math.floor(currentScore);
+        currentScore[playerPlaying] /= 2;
+        currentScore[playerPlaying] = Math.floor(currentScore[playerPlaying]);
         alert("Score halved!");
     }
-    incrementTargetPosition();
-
-    $("#currentPlayerScore").text(SCORE + currentScore);
-    endGameCondition();
+    refreshTableScores();
+    if (incrementPlayerCounter()) {
+        incrementTargetPosition();
+        gameStarted = true;
+        $("#targetInfo").text(TARGET + targetLists[currentTargetPosition]);
+    }
     clearText();
+    endGameCondition();
+
 }
 
 /**
  * Checks if the game is finished. In case it is, a new game will be started automatically.
  */
 function endGameCondition() {
-    if (lastTargetPosition() === 0) {
-        alert("Finished Game! Score: " + currentScore);
-        currentScore = 40;
-        $("#currentPlayerScore").text(SCORE + currentScore);
+    if (currentTargetPosition === 0 && gameStarted === true) {
+        gameStarted = false;
+        alert("Game finished! Scores: " + currentScore);
+        for (let i = 0; i < currentScore.length; i++) {
+            currentScore[i] = 40;
+        }
+
+
     }
+}
+
+function incrementPlayerCounter() {
+    playerPlaying++;
+    playerPlaying = playerPlaying % numOfPlayers;
+    if (playerPlaying === 0) {
+        return true;
+    }
+    return false;
 }
 
 function clearText() {

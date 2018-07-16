@@ -28,9 +28,32 @@
 </div>
 
 <div id="player_stats">
-    <label id="currentPlayerScore"> </label>
+    <label id="currentPlayer"> </label>
 </div>
+<div class="table-responsive">
+    <table border='1' class="table table-fixexd table-responsive" id="scoreTable">
+        <thead>
+        <tr>
+            <th id="p1label"> Player 1</th>
+            <th id="p2label"> Player 2</th>
+            <th id="p3label"> Player 3</th>
+            <th id="p4label"> Player 4</th>
 
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <th id="player1">0</th>
+            <th id="player2">0</th>
+            <th id="player3">0</th>
+            <th id="player4">0</th>
+        </tr>
+        </tbody>
+
+
+    </table>
+</div>
+<script src="../scripts/controller/htmlcontroller.js"></script>
 <script src="../scripts/controller/halveit.js"></script>
 <script src="../scripts/util/typecheck.js"></script>
 </body>
