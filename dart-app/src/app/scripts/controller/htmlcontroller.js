@@ -56,7 +56,6 @@ function onShotClick() {
  * @param {number} currentPlayer the player currently playing
  */
 function writeIntoTable(scoreOfPlayer, currentPlayer) {
-
     let id = "player" + (currentPlayer + 1).toLocaleString();
     console.log("Current id is: " + id + ", score is: " + scoreOfPlayer);
     //depending on current player we need the right id
@@ -75,9 +74,4 @@ function getElementInsideContainer(containerID, childID) {
     let elm = document.getElementById(childID);
     let parent = elm ? elm.parentNode : {};
     return (parent.id && parent.id === containerID) ? elm : {};
-}
-
-function greyOutColumns(numOfPlayers) {
-    let colIndex = $("scoreTable").index();
-    $("td, th").filter(":nth-child(" + (colIndex + 1) + ")").css("background-color", "red")​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​;
 }

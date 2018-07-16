@@ -65,10 +65,13 @@ function addScore() {
     }
     if (legalAt(score, targetLists[currentTargetPosition]) && score !== 0) {
         currentScore[playerPlaying] += score;
-    } else {
+    } else if (score === 0) {
         currentScore[playerPlaying] /= 2;
         currentScore[playerPlaying] = Math.floor(currentScore[playerPlaying]);
         alert("Score halved!");
+    } else {
+        alert("Illegal score. Try again");
+        return;
     }
     refreshTableScores();
     if (incrementPlayerCounter()) {
@@ -91,6 +94,8 @@ function endGameCondition() {
         for (let i = 0; i < currentScore.length; i++) {
             currentScore[i] = 40;
         }
+        init();
+
 
 
     }
@@ -99,6 +104,7 @@ function endGameCondition() {
 function incrementPlayerCounter() {
     playerPlaying++;
     playerPlaying = playerPlaying % numOfPlayers;
+    $("#currentPlayer").text(CURRENT_PLAYER + (playerPlaying + 1));
     if (playerPlaying === 0) {
         return true;
     }
