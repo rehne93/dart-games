@@ -5,6 +5,9 @@
  * @param {number} numberOfPlayers the number of players who will participate
  */
 
+$(function () {
+    startGame(2);
+});
 let currentGame = undefined;
 
 function startGame(playerNumber) {

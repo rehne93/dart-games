@@ -1,6 +1,7 @@
 <html>
 <head>
     <link rel="stylesheet" href="../css/elimination.css">
+    <link rel="stylesheet" href="../css/common.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -29,29 +30,32 @@
     <button id="shotButton" type="button" class="buttonStyle" onclick="onShotClick()">Punkte</button>
 </div>
 <label id="currentPlayer"> </label>
+<div style="width: 100vw">
+    <div id="playerstats" class="flex-container">
+        <div class="table-responsive">
+            <table border='1' class="table table-fixexd table-responsive" id="scoreTable">
+                <thead>
+                <tr>
+                    <th id="p1label"> Player 1</th>
+                    <th id="p2label"> Player 2</th>
+                    <th id="p3label"> Player 3</th>
+                    <th id="p4label"> Player 4</th>
 
-<div class="table-responsive">
-    <table border='1' class="table table-fixexd table-responsive" id="scoreTable">
-        <thead>
-    <tr>
-        <th id="p1label"> Player 1</th>
-        <th id="p2label"> Player 2</th>
-        <th id="p3label"> Player 3</th>
-        <th id="p4label"> Player 4</th>
-
-    </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <th id="player1">0</th>
-            <th id="player2">0</th>
-            <th id="player3">0</th>
-            <th id="player4">0</th>
-        </tr>
-        </tbody>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th id="player1">0</th>
+                    <th id="player2">0</th>
+                    <th id="player3">0</th>
+                    <th id="player4">0</th>
+                </tr>
+                </tbody>
 
 
-    </table>
+            </table>
+        </div>
+    </div>
 </div>
 
 <!-- JS Script imports for game logic starts here -->

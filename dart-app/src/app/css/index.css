@@ -2,18 +2,8 @@
     text-align: left;
     float: left;
     font-size: 35px;
-    font-family: verdana;
+    font-family: Arial;
     margin: 5% 10%;
-}
-
-
-button.buttonStyle {
-    text-align: center;
-    font-size: 30px;
-    border-radius: 15px;
-    background-color: darkgreen;
-    color: white;
-    margin-top: 10px;
 }
 
 

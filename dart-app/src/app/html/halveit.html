@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" href="../css/halveit.css">
+    <link rel="stylesheet" href="../css/common.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -11,11 +12,15 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <body>
-<div style="width: 70vw">
+<div id="headline" class="container" title="Bei Halve-It besteht das Ziel darin, immer drei Darts auf den gegebenen Zielwert zu werfen.
+Falls wenigstens ein Dart trifft, wird der Score addiert.
+Trifft kein Dart das Ziel werden die Punkte halbiert."><h1>
+    Halve it!
+</h1></div>
+
+
+<div style="width: 100vw">
     <div id="player-container" class="flex-container">
-        <div id="headline" class="container"><h1>
-            Halve it!
-        </h1></div>
         <div id="player_number" class="container">
             <label>Wie viele Spieler?</label>
             <br>
@@ -28,13 +33,16 @@
         </div>
     </div>
 </div>
-<div style="width: 80vw" id="shot-informations" class="flex-container">
+<div style="width: 100vw" id="information" class="flex-container">
     <div id="player_stats">
         <label id="currentPlayer"> </label>
+        <br>
+        <label id="targetInfo">Wurfziel: <label id="target"></label></label>
     </div>
-    <div id="current_target" class="container">
-        <label id="targetInfo">Ziel: <label id="target"></label></label>
-    </div>
+</div>
+</div>
+<div style="width: 100vw; overflow-x: auto;" id="shot-informations" class="flex-container">
+
     <div id="shot_container" class="container">
         <input id="usrInput" type="text" class="usrInput">
         <button id="shotButton" type="button" class="buttonStyle" onclick="addScore()">Score</button>
@@ -47,7 +55,9 @@
     </div>
 </div>
 </div>
-<div style="width: 70vw">
+
+
+<div style="width: 100vw">
     <div id="player-stats" class="flex-container">
         <div class="table-responsive">
             <table border='1' class="table table-fixexd table-responsive" id="scoreTable">
